@@ -12,12 +12,12 @@ This repository contains my solutions to various Data Structures and Algorithms 
 ## Getting Started
 To get started with the exercises, clone this repository to your local machine:
 
-    ```bash
+      
     git clone https://github.com/your-username/Data-structures-and-algorithms.git
     cd Data-structures-and-algorithms
 
 ## Running the code
-    ``bash
+    
     python3 <exercise>.py
 
 ## Contributing
