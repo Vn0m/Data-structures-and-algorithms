@@ -1,13 +1,37 @@
-arr = [5, 3, 6, 2, 10]
+# Function to find the index of the smallest element in a list
+def findSmallest(arr):
+    smallest_index = 0
+    smallest = arr[0]
+
+    # Iterate through the elements starting from the second element
+    for i in range(1, len(arr)):
+        # Check if the current element is smaller than the current smallest
+        if arr[i] < smallest:
+            smallest = arr[i]
+            smallest_index = i
+
+    # Return the index of the smallest element
+    return smallest_index
+
+# Function to perform Selection Sort on a list
 def selectionSort(arr):
-    for i in range(0, len(arr) - 1):
-        cur_min_index = i
-        for j in range(i + 1, len(arr)):
-            if arr[j] < arr[cur_min_index]:
-                cur_min_index = j
+    # Initialize an empty list to store the sorted elements
+    newArr = []
 
-        arr[i], arr[cur_min_index] = arr[cur_min_index],  arr[i]
+    # Iterate through the elements of the input list
+    for i in range(len(arr)):
+        # Find the index of the smallest element in the current state of the list
+        smallest = findSmallest(arr)
 
+        # Remove the smallest element from the original list and append it to newArr
+        newArr.append(arr.pop(smallest))
 
-selectionSort(arr)
-print(arr)
+    # Return the sorted list
+    return newArr
+
+# Example usage of selectionSort with an unsorted list
+unsorted_list = [5, 3, 6, 2, 10]
+sorted_list = selectionSort(unsorted_list)
+
+# Print the sorted list
+print(sorted_list)
